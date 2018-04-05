@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:layout_height="fill_parent" android:orientation="horizontal">
 
     <TextView
         android:id="@+id/text_uuid"
@@ -20,22 +20,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="00:11:12:14:00:35" >
-    </EditText>
+        android:text="00:11:12:14:00:35"></EditText>
 
     <Button
         android:id="@+id/bt_verbinden"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="verbinden"
-        android:text="Verbinden" />
+        android:text="Verbinden"
+        tools:ignore="DuplicateIds" />
 
     <Button
         android:id="@+id/bt_verbinden"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="trennen"
-        android:text="Trennen" />
+        android:text="Trennen"
+        tools:ignore="DuplicateIds" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -47,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="Test 123" >
+        android:text="Test 123">
 
         <requestFocus />
     </EditText>
