@@ -20,6 +20,8 @@ import java.util.UUID;
 /**
  * Created by 52tade1bwi on 05.04.2018.
  */
+//TEST
+
 
 public class BT_Activity extends MainActivity {
       /*
