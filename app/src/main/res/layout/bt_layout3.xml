@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+
+    <EditText
+        android:id="@+id/L3TxtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="78dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="     Mit Gerät verbunden?"
+        android:textColor="#ffffff"
+        android:textSize="15pt" />
+
+    <Button
+        android:id="@+id/L3btn1oeffnen"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="103dp"
+        android:autoText="false"
+        android:background="#00bfff"
+        android:text="Haustür öffnen"
+        android:textColor="#ffffff"
+        android:textSize="10pt" />
+
+    <TextView
+        android:id="@+id/L3txt2gruen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:layout_toLeftOf="@+id/L3txt3rot"
+        android:layout_toStartOf="@+id/L3txt3rot"
+        android:background="@android:color/holo_green_light"
+        android:text="  erfolgreich  "
+        android:textColor="@android:color/background_light"
+        android:textSize="10pt" />
+
+    <TextView
+        android:id="@+id/L3txt3rot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/L3txt2gruen"
+        android:layout_alignBottom="@+id/L3txt2gruen"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@android:color/holo_red_dark"
+        android:text="  nicht erfolgreich  "
+        android:textColor="@android:color/background_light"
+        android:textSize="10pt" />
+
+</RelativeLayout>
