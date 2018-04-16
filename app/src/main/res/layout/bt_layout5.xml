@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000000">
 
-</LinearLayout>
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/L2TxtGefunden"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Bitte den Finger auf den Sensor legen"
+        android:textColor="@android:color/background_light" />
+
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="1in"
+        android:layout_height="1in"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_below="@+id/editText"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="54dp"
+        android:src="@mipmap/finger" />
+
+
+
+</RelativeLayout>
