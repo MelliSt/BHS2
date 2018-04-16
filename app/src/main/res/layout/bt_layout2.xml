@@ -29,7 +29,7 @@
         android:layout_below="@+id/L2TxtGefunden"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="148dp"
-        android:autoText="false"
+
         android:background="#00bfff"
         android:text="Verbinden"
         android:textColor="#ffffff"

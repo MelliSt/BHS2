@@ -28,8 +28,9 @@
         android:layout_below="@+id/L2TxtGefunden"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="148dp"
-        android:autoText="false"
+
         android:background="#00bfff"
+        android:onClick="bt_activity1"
         android:text="Scan nach Gerät"
         android:textColor="#ffffff"
         android:textSize="10pt" />
