@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   public void bt_activity1(View view){
-       Intent intent = new Intent(this, bt_Activity2.class);
+    public void bt_activity1(View view){
+        Intent intent = new Intent(this, bt_Activity2.class);
         startActivity(intent);
 
 
@@ -33,5 +33,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
-
-
