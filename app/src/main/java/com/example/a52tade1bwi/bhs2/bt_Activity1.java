@@ -1,5 +1,8 @@
 package com.example.a52tade1bwi.bhs2;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.bluetooth.BluetoothAdapter;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +14,8 @@ import android.widget.Button;
 
 public class bt_Activity1 extends Activity implements View.OnClickListener{
     public Button L1btn1;
+    private BluetoothAdapter BTAdapter = null;
+    private AlertDialog.Builder alertDialogBuilder = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +24,11 @@ public class bt_Activity1 extends Activity implements View.OnClickListener{
 
         L1btn1 = (Button) findViewById(R.id.L1btn1);
         L1btn1.setOnClickListener(this);
-    }
 
-    public void openActivity2() {
-        Intent intent = new Intent(this, bt_Activity2.class);
-        startActivity(intent);
+
+        BTAdapter = BluetoothAdapter.getDefaultAdapter();
+        // Phone does not support Bluetooth so let the user know and exit.
+
     }
 
     @Override
@@ -31,12 +36,43 @@ public class bt_Activity1 extends Activity implements View.OnClickListener{
         int ce = view.getId();
 
         if(ce == R.id.L1btn1){
-            Intent inten = new Intent(bt_Activity1.this, bt_Activity2.class);
-            startActivity(inten);
+
+            if (BTAdapter == null) {
+
+                new AlertDialog.Builder(this)
+                        .setTitle("Not compatible")
+                        .setMessage("Your phone does not support Bluetooth")
+                        .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                System.exit(0);
+                            }
+                        })
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .show();
+
+            }
+                else{
+                    Intent inten = new Intent(bt_Activity1.this, bt_Activity2.class);
+            startActivity(inten);}
         }
 
     }
-}
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

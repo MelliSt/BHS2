@@ -27,8 +27,8 @@ public class BT_Activity extends MainActivity {
      */
 
     // UUID fuer Kommunikation mit Seriellen Modulen
-    private UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
-    private static final String LOG_TAG = "FRAGDUINO";
+    private UUID uuid = UUID.fromString("00:06:66:08:17:C6");
+    private static final String LOG_TAG = "FireFly-17C6";
 
     // Variablen
     private BluetoothAdapter adapter = null;
