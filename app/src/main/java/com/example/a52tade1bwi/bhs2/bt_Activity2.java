@@ -10,7 +10,7 @@ import android.widget.Button;
  * Created by 52tade1bwi on 10.04.2018.
  */
 
-public class bt_Activity2 extends Activity {
+public class bt_Activity2 extends Activity implements View.OnClickListener{
     public Button L2btn1;
 
 
@@ -20,19 +20,22 @@ public class bt_Activity2 extends Activity {
         setContentView(R.layout.bt_layout2);
 
         L2btn1 = (Button) findViewById(R.id.L2btn1);
-        L2btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openActivity3();
-            }
-        });
+        L2btn1.setOnClickListener(this);
+
+
 
     }
 
-    private void openActivity3() {
-        Intent intent = new Intent(this, bt_Activity3.class);
-        startActivity(intent);
-    }
+
+    @Override
+    public void onClick(View view) {
+        int ce = view.getId();
+
+        if(ce == R.id.L2btn1){
+            Intent inten = new Intent(bt_Activity2.this, bt_Activity3.class);
+            startActivity(inten);
+        }
 
 
-}
+
+    }}
