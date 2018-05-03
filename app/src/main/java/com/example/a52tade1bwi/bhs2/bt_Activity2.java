@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
 /**
  * Created by 52tade1bwi on 10.04.2018.
  */
 
 public class bt_Activity2 extends Activity implements View.OnClickListener{
     public Button L2btn1;
+
 
 
     @Override
@@ -21,8 +23,6 @@ public class bt_Activity2 extends Activity implements View.OnClickListener{
 
         L2btn1 = (Button) findViewById(R.id.L2btn1);
         L2btn1.setOnClickListener(this);
-
-
 
     }
 
