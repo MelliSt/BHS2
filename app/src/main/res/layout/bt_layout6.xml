@@ -16,7 +16,7 @@
         android:layout_marginTop="75dp"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="Haustür öffnet sich für 30 Sekunden"
+        android:text="Haustür öffnet sich für 5 Sekunden"
         android:textColor="@android:color/background_light" />
 
 
