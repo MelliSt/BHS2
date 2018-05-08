@@ -74,7 +74,7 @@ public class bt_Activity4 extends Activity   implements View.OnClickListener{
 
             }
             else{
-                Toast.makeText(this, "Password falsch" ,
+                Toast.makeText(this, "Passwort falsch" ,
                         Toast.LENGTH_LONG).show();
                 recreate();
             }
@@ -89,7 +89,7 @@ public class bt_Activity4 extends Activity   implements View.OnClickListener{
 
     }
     public void senden(View view) {
-        String message = "pin_ok";
+        String message = "pwok";
         byte[] msgBuffer = message.getBytes();
         if (is_connected) {
             Log.d(LOG_TAG, "Sende Nachricht: " + message);

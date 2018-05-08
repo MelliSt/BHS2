@@ -31,8 +31,10 @@
 
         android:background="#00bfff"
         android:onClick="bt_activity1"
-        android:text="Scan nach Gerät"
+        android:text=" Scan nach Gerät "
         android:textColor="#ffffff"
         android:textSize="10pt" />
+
+
 
 </RelativeLayout>

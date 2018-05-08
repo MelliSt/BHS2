@@ -45,6 +45,8 @@ public class bt_Activity1 extends Activity implements View.OnClickListener{
 
         int ce = view.getId();
 
+
+
         if(ce == R.id.L1btn1){
                 BTAdapter = BluetoothAdapter.getDefaultAdapter();
             if (BTAdapter == null || !BTAdapter.isEnabled()) {

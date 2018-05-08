@@ -28,13 +28,17 @@ public class bt_Activity3 extends Activity implements View.OnClickListener{
     public Button L2btn1;
     private BluetoothSocket socket = null;
     private BluetoothAdapter BTAdapter = null;
-    private boolean is_connected = false;
+    public boolean is_connected = false;
     private OutputStream stream_out = null;
     private InputStream stream_in = null;
     private AlertDialog.Builder alertDialogBuilder = null;
     private UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private static final String LOG_TAG = "BluetoothApp";
     private static String mac_adresse = "00:06:66:08:17:C6";
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,8 @@ public class bt_Activity3 extends Activity implements View.OnClickListener{
         L3btn1oeffnen = (Button) findViewById(R.id.L3btn1oeffnen);
         L3btn1oeffnen.setOnClickListener(this);
         BluetoothDevice remote_device = BTAdapter.getRemoteDevice(mac_adresse);
+
+
 
         // Socket erstellen
         try {
@@ -108,6 +114,7 @@ public class bt_Activity3 extends Activity implements View.OnClickListener{
 
         }
     }
+
 
 
 
