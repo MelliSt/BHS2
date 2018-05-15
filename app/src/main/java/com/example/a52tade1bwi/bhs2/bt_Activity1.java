@@ -66,6 +66,7 @@ public class bt_Activity1 extends Activity implements View.OnClickListener{
                 else{
                     Intent inten = new Intent(bt_Activity1.this, bt_Activity2.class);
             startActivity(inten);}
+
         }
 
     }
