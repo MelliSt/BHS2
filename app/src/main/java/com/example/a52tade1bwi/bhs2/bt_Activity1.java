@@ -5,15 +5,19 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import java.util.UUID;
 import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
+
 /**
  * Created by 52tade1bwi on 10.04.2018.
  */
 
-public class bt_Activity1 extends Activity implements View.OnClickListener{
+public class bt_Activity1 extends AppCompatActivity implements View.OnClickListener{
     public Button L1btn1;
     private BluetoothAdapter BTAdapter = null;
     private AlertDialog.Builder alertDialogBuilder = null;
@@ -25,27 +29,21 @@ public class bt_Activity1 extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bt_layout1);
 
-     //   Log.d(LOG_TAG, "Bluetest: OnCreate");
+       Log.d(LOG_TAG, "Bluetest: OnCreate");
 
 
         L1btn1 = (Button) findViewById(R.id.L1btn1);
         L1btn1.setOnClickListener(this);
 
 
-
-
-        BTAdapter = BluetoothAdapter.getDefaultAdapter();
-        // Phone does not support Bluetooth so let the user know and exit.
-
     }
+
+
 
     @Override
     public void onClick(View view) {
 
-
         int ce = view.getId();
-
-
 
         if(ce == R.id.L1btn1){
                 BTAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -64,6 +62,7 @@ public class bt_Activity1 extends Activity implements View.OnClickListener{
 
             }
                 else{
+
                     Intent inten = new Intent(bt_Activity1.this, bt_Activity2.class);
             startActivity(inten);}
 

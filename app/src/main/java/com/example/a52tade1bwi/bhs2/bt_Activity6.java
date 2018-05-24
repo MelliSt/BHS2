@@ -47,8 +47,6 @@ public class bt_Activity6 extends MainActivity{
 
 
 
-
-
     }
 
     public void empfangen(View view) {

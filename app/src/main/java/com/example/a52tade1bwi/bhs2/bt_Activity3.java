@@ -22,7 +22,7 @@ import java.util.UUID;
  * Created by 52tade1bwi on 10.04.2018.
  */
 
-public class bt_Activity3 extends Activity implements View.OnClickListener{
+public class bt_Activity3 extends Activity implements View.OnClickListener {
 
     public Button L3btn1oeffnen;
     public Button L2btn1;
@@ -37,20 +37,17 @@ public class bt_Activity3 extends Activity implements View.OnClickListener{
     private static String mac_adresse = "00:06:66:08:17:C6";
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bt_layout3);
 
+
         L3btn1oeffnen = (Button) findViewById(R.id.L3btn1oeffnen);
         L3btn1oeffnen.setOnClickListener(this);
+
+
         BluetoothDevice remote_device = BTAdapter.getRemoteDevice(mac_adresse);
-
-
-
         // Socket erstellen
         try {
             socket = remote_device
@@ -82,42 +79,57 @@ public class bt_Activity3 extends Activity implements View.OnClickListener{
             }
         }
 
+
         // Outputstream erstellen:
-        try {
+        try
+
+        {
             stream_out = socket.getOutputStream();
             Log.d(LOG_TAG, "OutputStream erstellt");
-        } catch (IOException e) {
+        } catch (
+                IOException e)
+
+        {
             Log.e(LOG_TAG, "OutputStream Fehler: " + e.toString());
             is_connected = false;
         }
 
         // Inputstream erstellen
-        try {
+        try
+
+        {
             stream_in = socket.getInputStream();
             Log.d(LOG_TAG, "InputStream erstellt");
-        } catch (IOException e) {
+        } catch (
+                IOException e)
+
+        {
             Log.e(LOG_TAG, "InputStream Fehler: " + e.toString());
             is_connected = false;
         }
 
-        if (is_connected) {
+        if (is_connected)
+
+        {
             Toast.makeText(this, "Verbunden mit " + mac_adresse,
                     Toast.LENGTH_LONG).show();
             ((TextView) findViewById(R.id.L3txt2gruen)).setVisibility(View.VISIBLE);
             ((TextView) findViewById(R.id.L3txt3rot)).setVisibility(View.INVISIBLE);
-        } else {
-            Toast.makeText(this, "Verbindungsfehler, gehen Sie zurück" ,
+        } else
+
+        {
+            Toast.makeText(this, "Verbindungsfehler, gehen Sie zurück",
                     Toast.LENGTH_LONG).show();
             ((TextView) findViewById(R.id.L3txt2gruen)).setVisibility(View.INVISIBLE);
             ((TextView) findViewById(R.id.L3txt3rot)).setVisibility(View.VISIBLE);
             ((Button) findViewById(R.id.L3btn1oeffnen)).setVisibility(View.INVISIBLE);
 
         }
-    }
 
 
 
 
+}
 
     @Override
     public void onClick(View view) {
