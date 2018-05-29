@@ -28,14 +28,16 @@ public class bt_Activity3 extends Activity implements View.OnClickListener {
     public Button L2btn1;
     private BluetoothSocket socket = null;
     private BluetoothAdapter BTAdapter = null;
+    BluetoothDevice remote_device = null;
     public boolean is_connected = false;
     private OutputStream stream_out = null;
     private InputStream stream_in = null;
     private AlertDialog.Builder alertDialogBuilder = null;
-    private UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
+    //    private UUID uuid = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     private static final String LOG_TAG = "BluetoothApp";
-    private static String mac_adresse = "00:06:66:08:17:C6";
-
+    private UUID uuid = UUID.fromString("80DDBE66-26F2-6642-986D-050F8FFCB7CA");
+    //    private static String mac_adresse = "00:06:66:08:17:C6";
+    private static String mac_adresse = "80:A5:89:31:24:42";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +48,15 @@ public class bt_Activity3 extends Activity implements View.OnClickListener {
         L3btn1oeffnen = (Button) findViewById(R.id.L3btn1oeffnen);
         L3btn1oeffnen.setOnClickListener(this);
 
+        BTAdapter = BluetoothAdapter.getDefaultAdapter();
+        try {
+            remote_device = BTAdapter.getRemoteDevice(mac_adresse);
+            Log.d(LOG_TAG, "Remote device geholt");
+        } catch (Exception e) {
+            Log.e(LOG_TAG, "Remote device nicht geholt" + e.toString());
+        }
 
-        BluetoothDevice remote_device = BTAdapter.getRemoteDevice(mac_adresse);
+
         // Socket erstellen
         try {
             socket = remote_device
@@ -57,7 +66,14 @@ public class bt_Activity3 extends Activity implements View.OnClickListener {
             Log.e(LOG_TAG, "Socket Erstellung fehlgeschlagen: " + e.toString());
         }
 
-        BTAdapter.cancelDiscovery();
+
+        try {
+            BTAdapter.cancelDiscovery();
+            Log.d(LOG_TAG, "Discovery canceled");
+        } catch (Exception e) {
+            Log.e(LOG_TAG, "Discovery nicht gecanceled" + e.toString());
+        }
+
 
         // Socket verbinden
         try {
@@ -127,17 +143,16 @@ public class bt_Activity3 extends Activity implements View.OnClickListener {
         }
 
 
-
-
-}
+    }
 
     @Override
     public void onClick(View view) {
         int ce = view.getId();
 
-        if(ce == R.id.L3btn1oeffnen){
+        if (ce == R.id.L3btn1oeffnen) {
             Intent inten = new Intent(bt_Activity3.this, bt_Activity4.class);
             startActivity(inten);
         }
 
-    }}
+    }
+}
